@@ -8,7 +8,7 @@ electric<-read.table("household_power_consumption.txt", sep=";", header=TRUE,dec
 subsetDate<-subset(electric,electric$Date=="1/2/2007"|electric$Date=="2/2/2007")
 
 #3. make a histogram of global active power
-globalActivePower<-as.numeric(subsetDate$Global_active_power)
+globalActivePower<-as.numeric(as.character(subsetDate$Global_active_power))
 png("plot1.png", width=480, height=480)
 hist(globalActivePower, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
 dev.off()
